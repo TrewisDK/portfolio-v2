@@ -15,7 +15,9 @@ footer{
     background-color: #202123;
     height: 10vh;
     padding: 10px;
+    padding-bottom: 20px;
     font-family: 'Jer';
+    bottom: 0;
 }
 
 .footer-menu{
@@ -42,7 +44,7 @@ footer{
 }
 
 .App-header {
-    background-color: #202123;
+    background: linear-gradient(90deg, #111111, #202123, #2f3033, #202123, #727272);
     margin-bottom: 0px;
     max-height: 8vh;
     min-height: 5vh;
@@ -77,6 +79,8 @@ footer{
 .App-list-margin{
     margin-right: auto;
     margin-left: auto;
+    vertical-align: middle;
+    margin-bottom: 5px;
     padding-inline-start: 0px;
 }
 .App-content{
@@ -116,7 +120,7 @@ footer{
     border-radius: 30px;
     width: 100px;
     height: 30px;
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, background-color 0.5s ease-in-out;
 }
 .button-more:hover{
     background-color: #202123;
@@ -131,7 +135,7 @@ footer{
     background-color: #d9d9d9;
     width: 300px;
     border-radius: 20px;
-    height: 400px;
+    height: 500px;
     display: inline-block;
     vertical-align: middle;
     margin-left: 50px;
@@ -153,6 +157,9 @@ footer{
     margin-right: auto;
 }
 @media screen and (max-width: 1600px) {
+    .App-header{
+        padding-bottom: 10px;
+    }
     .App-logo{
         margin-right: 200px;
     }

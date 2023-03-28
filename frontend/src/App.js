@@ -2,19 +2,20 @@ import logo from './logo.jpg';
 import dev from './dev.jpg'
 import dev2 from './dev2.jpg'
 import './App.css';
+import React, {useState} from "react";
+import PostItem from "./components/Projects";
+import Projects from "./components/Projects";
 
 
-function Hello() {
-    fetch('http://127.0.0.1:8000/')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            document.getElementById('test').innerText = data["message"];
-
-        })
-        .catch(error => console.error(error));
+function Hello(id) {
+    alert(id);
 }
 function App() {
+    const [projects, setProject] = useState(fetch('https://example.com/data.json')
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(error))
+    )
     return (
         <div className="App">
             <header className="App-header">
@@ -76,55 +77,10 @@ function App() {
                     <div>
                         <h1 className="App-section-title">Наши лучшие работы</h1>
                         <div className="App-best-projects">
-                            <div className="App-project">
-                                <div className="App-project-image"></div>
-                                <h3 id="test">Такой то сайт</h3>
-                                <div>Для такой то такой то компании</div>
-                                <button className="button-more" onClick={Hello}>Подробнее</button>
-                            </div>
-                            <div className="App-project">
-                                <div className="App-project-image"></div>
-                                <h3>Такой то сайт</h3>
-                                <div>Для такой то такой то компании</div>
-                                <button className="button-more" onClick={Hello}>Подробнее</button>
-                            </div>
-                            <div className="App-project">
-                                <div className="App-project-image"></div>
-                                <h3>Такой то сайт</h3>
-                                <div>Для такой то такой то компании</div>
-                                <button className="button-more" onClick={Hello}>Подробнее</button>
-                            </div>
-                            <div className="App-project">
-                                <div className="App-project-image"></div>
-                                <h3>Такой то сайт</h3>
-                                <div>Для такой то такой то компании</div>
-                                <button className="button-more" onClick={Hello}>Подробнее</button>
-                            </div>
-                            <div className="App-project">
-                                <div className="App-project-image"></div>
-                                <h3>Такой то сайт</h3>
-                                <div>Для такой то такой то компании</div>
-                                <button className="button-more" onClick={Hello}>Подробнее</button>
-                            </div>
-                            <div className="App-project">
-                                <div className="App-project-image"></div>
-                                <h3>Такой то сайт</h3>
-                                <div>Для такой то такой то компании</div>
-                                <button className="button-more" onClick={Hello}>Подробнее</button>
-                            </div>
-                            <div className="App-project">
-                                <div className="App-project-image"></div>
-                                <h3>Такой то сайт</h3>
-                                <div>Для такой то такой то компании</div>
-                                <button className="button-more" onClick={Hello}>Подробнее</button>
-                            </div>
-                            <div className="App-project">
-                                <div className="App-project-image"></div>
-                                <h3>Такой то сайт</h3>
-                                <div>Для такой то такой то компании</div>
-                                <button className="button-more" onClick={Hello}>Подробнее</button>
-                            </div>
-
+                            {
+                                projects.map(project =>
+                                <Projects project={project} />)
+                            }
                         </div>
                     </div>
                 </section>
