@@ -11,11 +11,16 @@ function Hello(id) {
     alert(id);
 }
 function App() {
-    const [projects, setProject] = useState(fetch('https://example.com/data.json')
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error(error))
+    const [projects, setProject] = useState(
+        [
+
+        ]
     )
+    projects.push({
+        "id": 1,
+        "title": "Проект для Маги",
+        "description": "Крайне сложный проект на Django"
+    })
     return (
         <div className="App">
             <header className="App-header">

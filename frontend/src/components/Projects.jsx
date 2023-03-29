@@ -4,7 +4,7 @@ import Hello from '../App'
 const ProjectItem = (props) => {
     function more(){
         return(
-            <h1>{props.project.id}</h1>
+            alert(props.project.id)
         )
     }
     return (
